@@ -122,23 +122,38 @@ class _HomeState extends State<Home> {
     //debugPrint("Peso ${peso} e altura ${altura}");
     //debugPrint("$imc");
     if (imc < 18.6) {
-      _texto = "Abaixo do peso (${imc.toStringAsPrecision(4)})";
+      _texto = "Abaixo do peso, vamos comer mais um pouquinho. (${imc.toStringAsPrecision(4)})";
       _imagem = "imagens/thin.png";
+      if(_sexo == 'homem'){
+        _imagem = "imagens/thin2.png";
+      }
     } else if (imc >= 18.6 && imc < 24.9) {
-      _texto = "Peso ideal (${imc.toStringAsPrecision(4)})";
+      _texto = "Peso ideal, continue assim (${imc.toStringAsPrecision(4)})";
       _imagem = "imagens/shape.png";
     } else if (imc >= 24.9 && imc < 29.9) {
       _texto = "Levemente acima do peso (${imc.toStringAsPrecision(4)})";
       _imagem = "imagens/fat.png";
+      if(_sexo == 'homem'){
+        _imagem = "imagens/fat2.png";
+      }
     } else if (imc >= 29.9 && imc < 34.9) {
-      _texto = "Obesidade Grau I (${imc.toStringAsPrecision(4)})";
+      _texto = "Obesidade Grau I, Vamos rever a dieta. (${imc.toStringAsPrecision(4)})";
       _imagem = "imagens/fat.png";
+      if(_sexo == 'homem'){
+        _imagem = "imagens/fat2.png";
+      }
     } else if (imc >= 34.9 && imc < 39.9) {
-      _texto = "Obesidade Grau II (${imc.toStringAsPrecision(4)})";
+      _texto = "Obesidade Grau II. Vamos rever a dieta e treinar pesado! (${imc.toStringAsPrecision(4)})";
       _imagem = "imagens/fat.png";
+      if(_sexo == 'homem'){
+        _imagem = "imagens/fat2.png";
+      }
     } else if (imc >= 40) {
-      _texto = "Obesidade Grau III (${imc.toStringAsPrecision(4)})";
+      _texto = "Obesidade Grau III. Vamos rever a dieta e treinar pesado (${imc.toStringAsPrecision(4)})";
       _imagem = "imagens/fat.png";
+      if(_sexo == 'homem'){
+        _imagem = "imagens/fat2.png";
+      }
     }
 
     Navigator.push(context,
